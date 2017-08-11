@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "dailychallenge",
+    "description": "An empty new project",
+    "slug": "dailychallenge",
+    "privacy": "public",
+    "sdkVersion": "19.0.0",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./app/assets/images/logo.png",
+    "loading": {
+      "icon": "./app/assets/images/logo.png",
+      "backgroundImage": "./app/assets/images/Default-nologo.png",
+      "hideExponentText": true
+    },
+    "packagerOpts": {
+      "assetExts": ["ttf", "mp4"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nimblecat.thechallenger"
+    },
+    "android": {
+      "package": "com.nimblecat.thechallenger"
+    }
+  }
+}
