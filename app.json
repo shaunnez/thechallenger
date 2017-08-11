@@ -3,7 +3,7 @@
     "name": "dailychallenge",
     "description": "An empty new project",
     "slug": "dailychallenge",
-    "privacy": "public",
+    "privacy": "unlisted",
     "sdkVersion": "19.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
