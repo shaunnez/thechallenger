@@ -8,7 +8,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
-    "icon": "./app/assets/images/logo.png",
+    "icon": "./app/assets/icons/ios/iTunesArtwork@1x.png",
     "loading": {
       "icon": "./app/assets/images/logo.png",
       "backgroundImage": "./app/assets/images/Default-nologo.png",
