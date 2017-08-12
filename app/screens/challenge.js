@@ -50,8 +50,16 @@ export class ChallengeScreen extends React.Component {
     }
   }
 
+  // reload question when current one is expired
   async componentDidMount() {
-    // nothing to do
+    if(this.state.question) {
+      let now = moment();
+      let dt = moment(this.state.question.date).endOf('day');
+      if(now.diff(dt, 'seconds') > 0) {
+         let question = await API.getRandomQuestion();
+         this.setState({  question: question });
+      }
+    }
   }
 
   back() {

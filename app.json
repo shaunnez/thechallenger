@@ -3,7 +3,7 @@
     "name": "dailychallenge",
     "description": "An empty new project",
     "slug": "dailychallenge",
-    "privacy": "unlisted",
+    "privacy": "public",
     "sdkVersion": "19.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -18,7 +18,7 @@
       "assetExts": ["ttf", "mp4"]
     },
     "ios": {
-      "supportsTablet": false,
+      "supportsTablet": true,
       "bundleIdentifier": "com.nimblecat.thechallenger"
     },
     "android": {

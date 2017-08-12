@@ -98,7 +98,7 @@ export class HomeScreen extends React.Component {
             }
             
             <RkText rkType="secondary3 whiteColor" style={{ marginTop: 15, paddingHorizontal: 15, textAlign: 'center' }}>We all continue our lives in what becomes somewhat of a routine. In order to become the best version of yourself, sometimes, you need a little challenge. </RkText>
-            <RkText rkType="secondary3 whiteColor" style={{ marginTop: 15, paddingHorizontal: 15, textAlign: 'center' }}>Do you want to be happier? Healthier? More daring? Challenge yourself today.</RkText>
+            <RkText rkType="secondary3 whiteColor" style={{ marginTop: 15, paddingHorizontal: 15, textAlign: 'center' }}>Do you want to be happier? Healthier? More daring? Challenge yourself today!</RkText>
             
         </View>
         <View style={ styles.buttonContainer }>

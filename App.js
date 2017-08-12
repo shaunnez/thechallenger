@@ -2,13 +2,13 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View, AsyncStorage } from 'react-native';
 import { StackNavigator, TabNavigator, TabBarTop } from 'react-navigation';
 import { withRkTheme, RkStyleSheet } from 'react-native-ui-kitten';
-import { AppLoading } from 'expo';
+import { AppLoading, Permissions, Notifications } from 'expo';
 import { FontAwesome } from '@expo/vector-icons';
 import { bootstrap, KittenTheme } from './app/config';
 import cacheAssetsAsync from './app/utils/cacheAssetsAsync';
-
 import * as Screens from './app/screens';
 import API from './app/services/api';
+let moment = require('moment');
 
 const DailyChallenge = StackNavigator({
   First: {
@@ -65,7 +65,34 @@ export default class AppContainer extends React.Component {
       );
       console.log(e.message);
     } finally {
+      await this.setupNotifications();
       this.setState({ assetsReady: true });
+    }
+  }
+
+  async setupNotifications() {
+    const { status } = await Permissions.getAsync(Permissions.NOTIFICATIONS);
+    if (status == 'granted') {
+      let tomorrow = moment().add(1, 'days').startOf('day').add(8, 'hourss').toDate();
+      let notification = {
+        title: 'The Challenger',
+        body: 'Your next daily challenge is ready!',
+        ios: {
+          sound: true
+        },
+        android: {
+          sound: true,
+          icon: './app/assets/images/logo.png',
+          color: KittenTheme.colors.sunglow,
+          priority: 'high',
+          vibrate: true
+        }
+      }
+      let schedule = { time: tomorrow, repeat: 'day' };
+      await Notifications.cancelAllScheduledNotificationsAsync();
+      return await Notifications.scheduleLocalNotificationAsync(notification, schedule);
+    } else {
+      return true;
     }
   }
 
